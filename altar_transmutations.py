@@ -1,5 +1,4 @@
 # Data in LP/t
-import math
 
 ELDRITCH_ORB = 140
 # to blank slate
