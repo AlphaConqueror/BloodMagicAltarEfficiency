@@ -1,4 +1,4 @@
-AVERAGE_MOB_COUNT = 20
+AVERAGE_MOB_COUNT = 20 * 24
 
 # Client
 DEFAULT_TICK_FACTOR = 20
@@ -15,6 +15,7 @@ RUNE_OF_SACRIFICE_GAIN_PERCENT = 10
 
 class Data:
     rune_space_left = DEFAULT_RUNE_SPACE
+    # number of ticks before the next processing
     current_tick_factor = DEFAULT_TICK_FACTOR
     runes_of_dislocation = 0
     runes_of_acceleration = 0
@@ -35,7 +36,7 @@ def add_rune(data: Data, rune_type: int, amount: int):
         match rune_type:
             case RuneType.DISLOCATION:
                 if calc_transfer_rate(data) > get_buffer(data):
-                    data.runes_of_capacity += 1
+                    add_rune(data, RuneType.CAPACITY, 1)
                 else:
                     data.runes_of_dislocation += 1
 
@@ -117,6 +118,10 @@ if __name__ == '__main__':
         data: Data = Data()
 
         add_rune(data, RuneType.ACCELERATION, i)
+
+        # ensure big enough capacity to take in all the generated LP
+        while calc_generation_rate(data) > get_capacity(data):
+            add_rune(data, RuneType.CAPACITY, 1)
 
         if DEBUG:
             print("--------------------")
