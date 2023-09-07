@@ -1,11 +1,14 @@
+
 # BloodAltarEfficiency
 
 A Python project to calculate the optimal rune layout for your needs.
-It enables you to calculate the most efficient rune layout for any given transmutation or Well of Suffering setup.
+It enables you to calculate the **most efficient** rune layout for any given **transmutation** or **Well of Suffering** setup.
 
-Here are the results for the most efficient transmutation of all Blood Magic slates using a tier 6 altar with a rune space of 184. 
+## Transmutation
 
-## STONE -> BLANK SLATE
+Here are the results for the **most efficient transmutation** of all **Blood Magic slates** using a **tier 6 altar** with a **rune space of 184**. 
+
+### STONE -> BLANK SLATE
 
 |  |  |
 |--|--|
@@ -21,7 +24,7 @@ Here are the results for the most efficient transmutation of all Blood Magic sla
 | CAPACITY | 10000 LP |
 
 
-## BLANK SLATE -> REINFORCED SLATE
+### BLANK SLATE -> REINFORCED SLATE
 
 |  |  |
 |--|--|
@@ -37,7 +40,7 @@ Here are the results for the most efficient transmutation of all Blood Magic sla
 | CAPACITY | 10000 LP |
 
 
-## REINFORCED SLATE -> IMBUED SLATE
+### REINFORCED SLATE -> IMBUED SLATE
 
 |  |  |
 |--|--|
@@ -53,7 +56,7 @@ Here are the results for the most efficient transmutation of all Blood Magic sla
 | CAPACITY | 10000 LP |
 
 
-## IMBUED SLATE -> DEMONIC SLATE
+### IMBUED SLATE -> DEMONIC SLATE
 
 |  |  |
 |--|--|
@@ -69,7 +72,7 @@ Here are the results for the most efficient transmutation of all Blood Magic sla
 | CAPACITY | 10000 LP |
 
 
-## DEMONIC SLATE -> ETHEREAL SLATE
+### DEMONIC SLATE -> ETHEREAL SLATE
 
 |  |  |
 |--|--|
@@ -83,3 +86,21 @@ Here are the results for the most efficient transmutation of all Blood Magic sla
 | CONSUMPTION RATE | 1168.0 LP/1t ( 1168.0 LP/t )
 | BUFFER | 1200.0 LP/1t ( 1200.0 LP/t )|
 | CAPACITY | 12000 LP|
+
+## Generation
+
+Here is an example of a **Well of Suffering** setup using a **tier 6 altar** with a **rune space of 184** with an average mob count of 20.
+
+|  |  |
+|--|--|
+| AVERAGE MOB COUNT | 20 |
+| RUNE SPACE | 184 |
+| RUNES OF DISLOCATION | 12 |
+| RUNES OF ACCELERATION | 19 |
+| RUNES OF AUGMENTED CAPACITY | 0 |
+| RUNES OF SACRIFICE | 153 |
+| TICK FACTOR | 1 |
+| TRANSFER RATE | 178.32200896511992 LP/1t ( 178.32200896511992 LP/t ) |
+| GENERATION RATE | 163.0 LP/1t ( 163.0 LP/t ) |
+| BUFFER | 1000.0 LP/1t ( 1000.0 LP/t ) |
+| CAPACITY | 10000 LP |
