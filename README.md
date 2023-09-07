@@ -1,5 +1,8 @@
 # BloodAltarEfficiency
 
+A Python project to calculate the optimal rune layout for your needs.
+It enables you to calculate the most efficient rune layout for any given transmutation or Well of Suffering setup.
+
 Here are the results for the most efficient transmutation of all Blood Magic slates using a tier 6 altar with a rune space of 184. 
 
 ## STONE -> BLANK SLATE
