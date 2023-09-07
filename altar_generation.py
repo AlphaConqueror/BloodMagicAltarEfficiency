@@ -1,4 +1,4 @@
-AVERAGE_MOBS_ALIVE = 32
+AVERAGE_MOB_COUNT = 20
 
 # Client
 DEFAULT_TICK_FACTOR = 20
@@ -8,7 +8,7 @@ MAX_RUNES_OF_ACCELERATION = 19
 DEFAULT_CAPACITY = 10000
 DEFAULT_TRANSMISSION_RATE = 20
 DEFAULT_RUNE_SPACE = 184
-DEBUG = True
+DEBUG = False
 
 RUNE_OF_SACRIFICE_GAIN_PERCENT = 10
 
@@ -66,7 +66,7 @@ def calc_transfer_rate(data: Data) -> float:
 
 # in LP/t
 def calc_generation_rate(data: Data) -> float:
-    return (AVERAGE_MOBS_ALIVE * 10 * (1 + data.runes_of_sacrifice * 0.1)) / DEFAULT_TICK_FACTOR
+    return (AVERAGE_MOB_COUNT * 10 * (1 + data.runes_of_sacrifice * 0.1)) / DEFAULT_TICK_FACTOR
 
 
 # in LP
@@ -83,7 +83,8 @@ def get_buffer(data: Data) -> float:
 
 
 def print_data(data: Data) -> None:
-    print("RUNE SPACE: ", DEFAULT_RUNE_SPACE,
+    print("AVERAGE MOB COUNT: ", AVERAGE_MOB_COUNT,
+          '\n' + "RUNE SPACE: ", DEFAULT_RUNE_SPACE,
           '\n' + "RUNES OF DISLOCATION: ", data.runes_of_dislocation,
           '\n' + "RUNES OF ACCELERATION: ", data.runes_of_acceleration,
           '\n' + "RUNES OF " + (
