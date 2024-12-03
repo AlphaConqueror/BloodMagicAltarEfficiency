@@ -32,11 +32,11 @@ class RuneType:
 
 
 def add_rune(data: Data, rune_type: int, amount: int):
-    for i in range(1, amount + 1):
+    for _ in range(0, amount):
         match rune_type:
             case RuneType.DISLOCATION:
                 if calc_transfer_rate(data) > get_buffer(data):
-                    add_rune(data, RuneType.CAPACITY, 1)
+                    data.runes_of_capacity += 1
                 else:
                     data.runes_of_dislocation += 1
 
