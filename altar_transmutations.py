@@ -1,6 +1,9 @@
-# Data in LP/t
-
+# example consumption rates
+# orbs in LP/t
+ARCHMAGES_ORB = 50
 ELDRITCH_ORB = 140
+
+# slates in LP/t
 # to blank slate
 STONE = 5
 # to reinforced slate
@@ -14,14 +17,17 @@ DEMONIC_SLATE = 40
 
 # Client
 DEFAULT_TICK_FACTOR = 20
-# DEFAULT_CAPACITY * 1.1^n >= DEFAULT_CAPACITY + 2000 * n
-USE_SUPERIOR_CAPACITY_AT = 15
-MAX_RUNES_OF_ACCELERATION = 19
+
+# Blood Magic defaults
 DEFAULT_CAPACITY = 10000
+DEFAULT_CONSUMPTION_RATE = ARCHMAGES_ORB
+DEFAULT_RUNE_SPACE = 108 - 25
 DEFAULT_TRANSMISSION_RATE = 20
-DEFAULT_RUNE_SPACE = 184
-DEFAULT_CONSUMPTION_RATE = ELDRITCH_ORB
+MAX_RUNES_OF_ACCELERATION = 19
+
+# other
 DEBUG = False
+USE_SUPERIOR_CAPACITY_AT = 15  # DEFAULT_CAPACITY * 1.1^n >= DEFAULT_CAPACITY + 2000 * n
 
 
 class Data:
@@ -42,7 +48,7 @@ class RuneType:
 
 
 def add_rune(data: Data, rune_type: int, amount: int):
-    for i in range(1, amount + 1):
+    for _ in range(0, amount):
         match rune_type:
             case RuneType.DISLOCATION:
                 if calc_transfer_rate(data) > get_buffer(data):
@@ -105,7 +111,8 @@ def print_data(data: Data) -> None:
           '\n' + "TICK FACTOR: ", data.current_tick_factor,
           '\n' + "TRANSFER RATE: ", calc_transfer_rate(data), "LP/" + str(data.current_tick_factor) + "t (",
           (calc_transfer_rate(data) / data.current_tick_factor), "LP/t )"
-          + '\n' + "CONSUMPTION RATE: ", (calc_consumption_rate(data) * data.current_tick_factor), "LP/" + str(data.current_tick_factor) + "t (",
+          + '\n' + "CONSUMPTION RATE: ", (calc_consumption_rate(data) * data.current_tick_factor),
+          "LP/" + str(data.current_tick_factor) + "t (",
           calc_consumption_rate(data), "LP/t )"
           + '\n' + "BUFFER: ", get_buffer(data), "LP/" + str(data.current_tick_factor) + "t (",
           get_buffer(data) / data.current_tick_factor, "LP/t )"
@@ -115,7 +122,8 @@ def print_data(data: Data) -> None:
 def print_small_data(data: Data) -> None:
     print("TRANSFER RATE: ", calc_transfer_rate(data), "LP/" + str(data.current_tick_factor) + "t (",
           (calc_transfer_rate(data) / data.current_tick_factor), "LP/t )"
-          + '\n' + "CONSUMPTION RATE: ", (calc_consumption_rate(data) * data.current_tick_factor), "LP/" + str(data.current_tick_factor) + "t (",
+          + '\n' + "CONSUMPTION RATE: ", (calc_consumption_rate(data) * data.current_tick_factor),
+          "LP/" + str(data.current_tick_factor) + "t (",
           calc_consumption_rate(data), "LP/t )")
 
 
