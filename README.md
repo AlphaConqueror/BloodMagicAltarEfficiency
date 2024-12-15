@@ -1,6 +1,6 @@
-# BloodAltarEfficiency
+# BloodMagicAltarEfficiency
 
-A Python project to calculate the optimal rune layout for your needs.
+A Python project to calculate the optimal rune layout for Blood Magic altar.
 It enables you to calculate the **most efficient** rune layout for any given **transmutation** or **Well of Suffering**
 setup.
 
